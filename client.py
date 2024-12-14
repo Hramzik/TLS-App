@@ -35,7 +35,10 @@ def start_client(certfile_path):
 
 if __name__ == "__main__":
     os.environ['SSLKEYLOGFILE'] = 'ssl_logs.txt'
+    parser = argparse.ArgumentParser()
+    parser.add_argument("cert_path")
+    args = parser.parse_args()
 
-    start_client("cert.pem")
+    start_client(args.cert_path)
 
 #--------------------------------------------------
